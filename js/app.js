@@ -8,13 +8,14 @@ const DEST_AIRPORT = {
 
 const DESTINATION_COLORS = {
   Hawaii: "#e07a3f",
-  "Puerto Rico": "#3f8fe0",
+  "Puerto Rico": "#8a63d2",
   "Curaçao": "#3fbf8f",
   Florida: "#3f8fe0",
 };
 
 const state = {
   destination: "All",
+  activeApprovers: new Set(),
 };
 
 const fmtUSD = (n) =>
@@ -68,7 +69,16 @@ function datesCellHtml(l) {
 }
 
 function visibleListings() {
-  return LISTINGS.filter((l) => state.destination === "All" || l.destination === state.destination);
+  return LISTINGS.filter((l) => {
+    if (state.destination !== "All" && l.destination !== state.destination) return false;
+    if (state.activeApprovers.size > 0) {
+      const rejectedBy = l.rejectedBy || [];
+      for (const id of state.activeApprovers) {
+        if (rejectedBy.includes(id)) return false;
+      }
+    }
+    return true;
+  });
 }
 
 function destinationList() {
@@ -86,6 +96,23 @@ function renderControls() {
   destFilter.querySelectorAll("button").forEach((btn) => {
     btn.onclick = () => {
       state.destination = btn.dataset.dest;
+      renderAll();
+    };
+  });
+}
+
+function renderApproverControls() {
+  const wrap = document.getElementById("approverFilter");
+  wrap.innerHTML =
+    `<span class="control-label">Approved by:</span>` +
+    APPROVERS.map(
+      (a) => `<button class="chip ${state.activeApprovers.has(a.id) ? "active" : ""}" data-approver="${a.id}">${a.label}</button>`
+    ).join("");
+  wrap.querySelectorAll("button").forEach((btn) => {
+    btn.onclick = () => {
+      const id = btn.dataset.approver;
+      if (state.activeApprovers.has(id)) state.activeApprovers.delete(id);
+      else state.activeApprovers.add(id);
       renderAll();
     };
   });
@@ -140,7 +167,9 @@ function bathroomsClass(n) {
 
 function totalPriceHtml(n) {
   if (n == null) return "—";
-  return n > 15000 ? `<span class="value-bad">${fmtUSD(n)}</span>` : fmtUSD(n);
+  if (n > 16000) return `<span class="value-bad">${fmtUSD(n)}</span>`;
+  if (n >= 15000) return `<span class="value-warn">${fmtUSD(n)}</span>`;
+  return fmtUSD(n);
 }
 
 const ROWS = [
@@ -221,6 +250,7 @@ function initListingMaps(listings) {
 
 function renderAll() {
   renderControls();
+  renderApproverControls();
   renderTable();
 }
 

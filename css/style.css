@@ -58,6 +58,12 @@ header p {
   justify-content: center;
 }
 
+.control-label {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-right: 0.15rem;
+}
+
 .chip {
   padding: 0.35rem 0.9rem;
   border-radius: 999px;

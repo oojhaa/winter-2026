@@ -26,6 +26,17 @@ const ORIGINS = [
 // draw the little date timeline bar. Widen this if a listing falls outside it.
 const TRIP_WINDOW = { start: "2026-12-24", end: "2027-01-03" };
 
+// People/couples who can approve or reject a listing. By default everyone
+// approves everything — add a person's id to a listing's `rejectedBy` array
+// to record a rejection. Toggling a person's filter on hides any listing
+// they've rejected.
+const APPROVERS = [
+  { id: "PMA", label: "P&M+A" },
+  { id: "DG", label: "D&G" },
+  { id: "DC", label: "D&C" },
+  { id: "AO", label: "A&O" },
+];
+
 const LISTINGS = [
   {
     id: "waianae-vrbo-3522010",
@@ -59,6 +70,7 @@ const LISTINGS = [
       { text: "Far from Waikiki (38 miles)", severity: "warn" },
       "Bunk bed",
     ],
+    rejectedBy: ["PMA"],
   },
   {
     id: "waianae-airbnb-937325679334697210",
@@ -91,6 +103,7 @@ const LISTINGS = [
       "Only 4 bedrooms",
       { text: "Far from Waikiki (38 miles)", severity: "warn" },
     ],
+    rejectedBy: ["PMA"],
   },
   {
     id: "willemstad-airbnb-1532585715752240438",
@@ -145,8 +158,37 @@ const LISTINGS = [
     ],
     distanceToBeach: "5 min walk (hilly) or drive",
     nearbyAttractions: [],
-    highlights: ["Private infinity pool", "Has ping pong table"],
+    highlights: ["Private infinity pool", "Ping pong table"],
     criticalNotes: ["Extra electricity/cleaning fees"],
+  },
+  {
+    id: "atalaya-airbnb-32669565",
+    name: "Adults Only! Ocaso Luxury Villas: Entire Property",
+    source: "Airbnb",
+    sourceUrl: "https://www.airbnb.com/rooms/32669565",
+    destination: "Puerto Rico",
+    country: "United States",
+    flightDestination: "BQN", // Aguadilla — much closer to Rincón than San Juan (SJU)
+    location: {
+      address: "Ocaso Luxury Villas, Bo. Atalaya, Rincón, PR 00677",
+      lat: 18.3089596, // from Google Maps listing for Ocaso Luxury Villas
+      lng: -67.1911241,
+    },
+    checkIn: "2026-12-27",
+    checkOut: "2027-01-03",
+    nights: 7,
+    pricePerNightUsd: 2158.5, // derived from $15,109.47 total / 7 nights
+    totalPriceUsd: 15109.47,
+    bedrooms: 7,
+    bathrooms: 9,
+    maxGuests: 16, // listing says "16+ guests"
+    images: [
+      "https://a0.muscache.com/im/pictures/prohost-api/Hosting-32669565/original/2588315c-c8d5-4e7e-a210-f28abdb3e23e.jpeg?im_w=960",
+    ],
+    distanceToBeach: "15 min drive",
+    nearbyAttractions: [],
+    highlights: ["Private infinity pool"],
+    criticalNotes: ["Adults only", { text: "Remote", severity: "warn" }],
   },
   {
     id: "sarasota-airbnb-1502438565629923746",
