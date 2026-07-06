@@ -155,6 +155,7 @@ const LISTINGS = [
     sourceUrl: "https://www.airbnb.com/rooms/1502438565629923746",
     destination: "Florida",
     country: "United States",
+    flightDestination: ["SRQ", "TPA"], // Sarasota and Tampa — separate links since Google Flights doesn't support "or" between airports in free-text search
     location: {
       address: "Near Galvin Park, Sarasota, FL",
       lat: 27.3021414,
@@ -183,6 +184,7 @@ const LISTINGS = [
     sourceUrl: "https://www.airbnb.com/rooms/1052406844773217221",
     destination: "Florida",
     country: "United States",
+    flightDestination: "EYW", // Key West airport code — more reliable for Google Flights parsing than the place name
     location: {
       address: "Near Signs By Renee, Marathon, FL",
       lat: 24.729265,

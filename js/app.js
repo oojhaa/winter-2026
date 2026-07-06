@@ -28,13 +28,15 @@ function fmtShortDate(iso) {
 }
 
 // Builds a Google Flights search URL for a specific listing's actual dates,
-// rather than a dateless query (which defaults to near-term dates).
+// rather than a dateless query (which defaults to near-term dates). Google's
+// free-text query parsing is unofficial and can be inconsistent by route —
+// this compact "X to Y, date - date" phrasing tends to parse most reliably.
 function flightUrl(originAirport, destAirport, l) {
   if (!originAirport || !destAirport) return null;
   const query =
     l.checkIn && l.checkOut
-      ? `Flights from ${originAirport} to ${destAirport} on ${fmtShortDate(l.checkIn)} returning ${fmtShortDate(l.checkOut)}`
-      : `Flights from ${originAirport} to ${destAirport}`;
+      ? `${originAirport} to ${destAirport}, ${fmtShortDate(l.checkIn)} - ${fmtShortDate(l.checkOut)}`
+      : `${originAirport} to ${destAirport}`;
   return `https://www.google.com/travel/flights?q=${encodeURIComponent(query)}`;
 }
 
@@ -108,13 +110,17 @@ function criticalNotesHtml(l) {
 }
 
 function flightsCellHtml(l) {
-  const destAirport = DEST_AIRPORT[l.destination];
-  return `<div class="flight-grid">${ORIGINS.map((o) => {
-    const url = flightUrl(o.airport, destAirport, l);
-    return `
-      <span class="flight-origin">${o.city}</span>
-      <a class="flight-link" target="_blank" rel="noopener" href="${url}">search →</a>`;
-  }).join("")}</div>`;
+  const rawDest = l.flightDestination || DEST_AIRPORT[l.destination];
+  const destAirports = Array.isArray(rawDest) ? rawDest : [rawDest];
+  return `<div class="flight-grid">${ORIGINS.flatMap((o) =>
+    destAirports.map((dest) => {
+      const url = flightUrl(o.airport, dest, l);
+      const label = destAirports.length > 1 ? `${dest} →` : "search →";
+      return `
+        <span class="flight-origin">${o.city}</span>
+        <a class="flight-link" target="_blank" rel="noopener" href="${url}">${label}</a>`;
+    })
+  ).join("")}</div>`;
 }
 
 function ratingCellHtml(value, cssClass) {
