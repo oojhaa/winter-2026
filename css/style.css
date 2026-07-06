@@ -283,6 +283,45 @@ thead .row-label-col {
   border: 1px solid var(--border);
 }
 
+@media (max-width: 600px) {
+  header {
+    padding: 1rem 1rem 0.5rem;
+  }
+
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  main {
+    padding: 0 0.5rem;
+  }
+
+  #comparisonTable th,
+  #comparisonTable td {
+    padding: 0.5rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .row-label-col {
+    width: 84px;
+    min-width: 84px;
+    font-size: 0.78rem;
+  }
+
+  .property-col {
+    width: 190px;
+    min-width: 190px;
+  }
+
+  .thumb-lg {
+    height: 90px;
+  }
+
+  .location-map {
+    height: 150px;
+  }
+}
+
 footer {
   text-align: center;
   color: var(--muted);
