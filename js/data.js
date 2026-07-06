@@ -191,6 +191,37 @@ const LISTINGS = [
     criticalNotes: ["Adults only", { text: "Remote", severity: "warn" }],
   },
   {
+    id: "dorado-airbnb-1531988066011508040",
+    name: "Luxury Dorado Villa | Private Pool + BBQ | Sleeps 9",
+    source: "Airbnb",
+    sourceUrl: "https://www.airbnb.com/rooms/1531988066011508040",
+    destination: "Puerto Rico",
+    country: "United States",
+    location: {
+      address: "Near Vívelo Private Tours, Dorado, PR",
+      lat: 18.4680504, // from Google Maps pin
+      lng: -66.2710546,
+    },
+    checkIn: "2026-12-28",
+    checkOut: "2027-01-03",
+    nights: 6,
+    pricePerNightUsd: 2243, // derived from $13,458 total / 6 nights
+    totalPriceUsd: 13458,
+    bedrooms: 5,
+    bathrooms: 5,
+    maxGuests: 9,
+    images: [
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-1531988066011508040/original/461bf4c6-4cc2-496d-9547-77c398888964.jpeg?im_w=2560",
+    ],
+    distanceToBeach: "7 min drive to safe beach",
+    nearbyAttractions: [{ name: "Vívelo Private Tours", distanceMi: null }],
+    highlights: ["Private pool"],
+    criticalNotes: [
+      { text: "Only 6 nights", severity: "warn" },
+      { text: "Most north beaches unsafe", severity: "warn" },
+    ],
+  },
+  {
     id: "sarasota-airbnb-1502438565629923746",
     name: "170 - High Tide",
     source: "Airbnb",
