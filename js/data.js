@@ -162,35 +162,6 @@ const LISTINGS = [
     criticalNotes: ["Extra electricity/cleaning fees"],
   },
   {
-    id: "atalaya-airbnb-32669565",
-    name: "Adults Only! Ocaso Luxury Villas: Entire Property",
-    source: "Airbnb",
-    sourceUrl: "https://www.airbnb.com/rooms/32669565",
-    destination: "Puerto Rico",
-    country: "United States",
-    flightDestination: "BQN", // Aguadilla — much closer to Rincón than San Juan (SJU)
-    location: {
-      address: "Ocaso Luxury Villas, Bo. Atalaya, Rincón, PR 00677",
-      lat: 18.3089596, // from Google Maps listing for Ocaso Luxury Villas
-      lng: -67.1911241,
-    },
-    checkIn: "2026-12-27",
-    checkOut: "2027-01-03",
-    nights: 7,
-    pricePerNightUsd: 2158.5, // derived from $15,109.47 total / 7 nights
-    totalPriceUsd: 15109.47,
-    bedrooms: 7,
-    bathrooms: 9,
-    maxGuests: 16, // listing says "16+ guests"
-    images: [
-      "https://a0.muscache.com/im/pictures/prohost-api/Hosting-32669565/original/2588315c-c8d5-4e7e-a210-f28abdb3e23e.jpeg?im_w=960",
-    ],
-    distanceToBeach: "15 min drive",
-    nearbyAttractions: [],
-    highlights: ["Private infinity pool"],
-    criticalNotes: ["Adults only", { text: "Remote", severity: "warn" }],
-  },
-  {
     id: "dorado-airbnb-1531988066011508040",
     name: "Luxury Dorado Villa | Private Pool + BBQ | Sleeps 9",
     source: "Airbnb",
