@@ -52,7 +52,12 @@ const LISTINGS = [
     distanceToBeach: "Makaha Beach — 5 min drive",
     nearbyAttractions: [{ name: "Makaha Beach", distanceMi: null }],
     highlights: [],
-    criticalNotes: ["Community pool only", "Only 4 bedrooms", "Far from Waikiki (38 miles)"],
+    criticalNotes: [
+      "Community pool only",
+      "Only 4 bedrooms",
+      { text: "Far from Waikiki (38 miles)", severity: "warn" },
+      "Bunk bed",
+    ],
   },
   {
     id: "waianae-airbnb-937325679334697210",
@@ -80,7 +85,11 @@ const LISTINGS = [
     ],
     distanceToBeach: "Makaha Beach — 2 mile drive",
     nearbyAttractions: [{ name: "Makaha Beach", distanceMi: 2 }],
-    criticalNotes: ["Community pool only", "Only 4 bedrooms", "Far from Waikiki (38 miles)"],
+    criticalNotes: [
+      "Community pool only",
+      "Only 4 bedrooms",
+      { text: "Far from Waikiki (38 miles)", severity: "warn" },
+    ],
   },
   {
     id: "willemstad-airbnb-1532585715752240438",
@@ -108,6 +117,34 @@ const LISTINGS = [
     distanceToBeach: "15 min walk to Mambo Beach",
     nearbyAttractions: [{ name: "Mambo Beach", distanceMi: null }],
     highlights: ["Private pool"],
-    criticalNotes: ["Minimum 10 night stay required"],
+    criticalNotes: [{ text: "Minimum 10 night stay required", severity: "warn" }],
+  },
+  {
+    id: "jan-thiel-airbnb-1117971656602867561",
+    name: "Villa with sea view & infinity pool",
+    source: "Airbnb",
+    sourceUrl: "https://www.airbnb.com/rooms/1117971656602867561",
+    destination: "Curaçao",
+    country: "Curaçao",
+    location: {
+      address: "Vista Royal, T6 Kaya Báltiko, Jan Thiel, Curaçao",
+      lat: 12.0747762, // approx — using nearby "I <3 Curaçao" sign landmark, TODO refine to exact building
+      lng: -68.8704988,
+    },
+    checkIn: "2026-12-26",
+    checkOut: "2027-01-03",
+    nights: 8,
+    pricePerNightUsd: 2151.75, // derived from $17,214 total / 8 nights
+    totalPriceUsd: 17214,
+    bedrooms: 9,
+    bathrooms: 9,
+    maxGuests: 16,
+    images: [
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTExNzk3MTY1NjYwMjg2NzU2MQ%3D%3D/original/2f4ef0b6-b856-4a13-a5b6-16d621d99d26.jpeg?im_w=2560",
+    ],
+    distanceToBeach: "5 min walk (hilly) or drive",
+    nearbyAttractions: [],
+    highlights: ["Private infinity pool", "Has ping pong table"],
+    criticalNotes: ["Extra fees for electricity and cleaning"],
   },
 ];

@@ -96,7 +96,13 @@ function highlightsHtml(l) {
 
 function criticalNotesHtml(l) {
   if (!l.criticalNotes || !l.criticalNotes.length) return "—";
-  return `<ul class="critical-notes">${l.criticalNotes.map((n) => `<li>⚠ ${n}</li>`).join("")}</ul>`;
+  return `<ul class="critical-notes">${l.criticalNotes
+    .map((n) => {
+      const text = typeof n === "string" ? n : n.text;
+      const severity = typeof n === "string" ? "bad" : n.severity || "bad";
+      return `<li class="value-${severity}">⚠ ${text}</li>`;
+    })
+    .join("")}</ul>`;
 }
 
 function flightsCellHtml(l) {
@@ -109,14 +115,34 @@ function flightsCellHtml(l) {
   }).join("")}</div>`;
 }
 
+function ratingCellHtml(value, cssClass) {
+  if (value == null) return "—";
+  return `<span class="${cssClass}">${value}</span>`;
+}
+
+function bedroomsClass(n) {
+  return n >= 5 ? "value-good" : "value-bad";
+}
+
+function bathroomsClass(n) {
+  if (n <= 2.5) return "value-bad";
+  if (n < 4) return "value-warn";
+  return "value-good";
+}
+
+function totalPriceHtml(n) {
+  if (n == null) return "—";
+  return n > 15000 ? `<span class="value-bad">${fmtUSD(n)}</span>` : fmtUSD(n);
+}
+
 const ROWS = [
   { label: "$ / night", render: (l) => fmtUSD(l.pricePerNightUsd) },
-  { label: "Total", render: (l) => fmtUSD(l.totalPriceUsd) },
+  { label: "Total", render: (l) => totalPriceHtml(l.totalPriceUsd) },
   { label: "Highlights", render: (l) => highlightsHtml(l) },
   { label: "Lowlights", render: (l) => criticalNotesHtml(l) },
   { label: "Dates", render: (l) => datesCellHtml(l) },
-  { label: "Bedrooms", render: (l) => l.bedrooms ?? "—" },
-  { label: "Bathrooms", render: (l) => l.bathrooms ?? "—" },
+  { label: "Bedrooms", render: (l) => ratingCellHtml(l.bedrooms, bedroomsClass(l.bedrooms)) },
+  { label: "Bathrooms", render: (l) => ratingCellHtml(l.bathrooms, bathroomsClass(l.bathrooms)) },
   { label: "Distance to beach", render: (l) => l.distanceToBeach ?? "—" },
   { label: "Location", render: (l) => `<div class="location-map" id="map-listing-${l.id}"></div>` },
   { label: "Flights", render: (l) => flightsCellHtml(l) },
