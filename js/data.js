@@ -250,4 +250,33 @@ const LISTINGS = [
     highlights: ["Private pool", "Ping pong table"],
     criticalNotes: ["Only 4 bedrooms"],
   },
+  {
+    id: "marathon-vrbo-4342722",
+    name: "Starfish Isle",
+    source: "VRBO",
+    sourceUrl: "https://www.vrbo.com/4342722",
+    destination: "Florida",
+    country: "United States",
+    flightDestination: ["MIA", "EYW"], // Miami or Key West — both work for the Keys
+    location: {
+      address: "4 blocks from Sombrero Beach, Marathon, FL (approx — exact address not confirmed)",
+      lat: 24.696, // approx, ~4 blocks inland from Sombrero Beach — TODO refine once exact address is confirmed
+      lng: -81.088,
+    },
+    checkIn: "2026-12-26",
+    checkOut: "2027-01-02",
+    nights: 7,
+    pricePerNightUsd: 1892.29, // derived from $13,246 total / 7 nights
+    totalPriceUsd: 13246,
+    bedrooms: 5,
+    bathrooms: 5,
+    maxGuests: 12,
+    images: [
+      "https://media.vrbo.com/lodging/112000000/111670000/111666900/111666865/29db3ce0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    ],
+    distanceToBeach: "4 blocks to Sombrero Beach",
+    nearbyAttractions: [{ name: "Sombrero Beach", distanceMi: null }],
+    highlights: ["Private pool", "Paddleboards, kayak & bikes", "Walk to beach"],
+    criticalNotes: [],
+  },
 ];
