@@ -3,12 +3,14 @@ const DEST_AIRPORT = {
   Hawaii: "HNL",
   "Puerto Rico": "SJU",
   "Curaçao": "CUR",
+  Florida: "SRQ",
 };
 
 const DESTINATION_COLORS = {
   Hawaii: "#e07a3f",
   "Puerto Rico": "#3f8fe0",
   "Curaçao": "#3fbf8f",
+  Florida: "#3f8fe0",
 };
 
 const state = {

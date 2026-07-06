@@ -11,6 +11,7 @@ const AIRPORTS = {
   HNL: { name: "Honolulu (HNL)", lat: 21.3187, lng: -157.9224 },
   SJU: { name: "San Juan (SJU)", lat: 18.4394, lng: -66.0018 },
   CUR: { name: "Curaçao (CUR)", lat: 12.1889, lng: -68.9598 },
+  SRQ: { name: "Sarasota (SRQ)", lat: 27.3954, lng: -82.5544 },
 };
 
 // The trip origins we're comparing flights from. Add more by adding an
@@ -145,6 +146,62 @@ const LISTINGS = [
     distanceToBeach: "5 min walk (hilly) or drive",
     nearbyAttractions: [],
     highlights: ["Private infinity pool", "Has ping pong table"],
-    criticalNotes: ["Extra fees for electricity and cleaning"],
+    criticalNotes: ["Extra electricity/cleaning fees"],
+  },
+  {
+    id: "sarasota-airbnb-1502438565629923746",
+    name: "170 - High Tide",
+    source: "Airbnb",
+    sourceUrl: "https://www.airbnb.com/rooms/1502438565629923746",
+    destination: "Florida",
+    country: "United States",
+    location: {
+      address: "Near Galvin Park, Sarasota, FL",
+      lat: 27.3021414,
+      lng: -82.5565096,
+    },
+    checkIn: "2026-12-26",
+    checkOut: "2027-01-02",
+    nights: 7,
+    pricePerNightUsd: 1470.43, // derived from $10,293 total / 7 nights
+    totalPriceUsd: 10293,
+    bedrooms: 5,
+    bathrooms: 4,
+    maxGuests: 10,
+    images: [
+      "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1502438565629923746/original/76d23faa-2cd6-4575-ba20-87a53567be57.jpeg?im_w=2560",
+    ],
+    distanceToBeach: "500 yards (~5 min walk) to shell beach",
+    nearbyAttractions: [{ name: "Shell beach", distanceMi: 0.28 }],
+    highlights: ["Private heated pool"],
+    criticalNotes: ["Water can be a bit cold to swim"],
+  },
+  {
+    id: "marathon-airbnb-1052406844773217221",
+    name: "Mermaid's Paradise ~ Pool ~ Dock ~ Games ~ Views!",
+    source: "Airbnb",
+    sourceUrl: "https://www.airbnb.com/rooms/1052406844773217221",
+    destination: "Florida",
+    country: "United States",
+    location: {
+      address: "Near Signs By Renee, Marathon, FL",
+      lat: 24.729265,
+      lng: -81.013047,
+    },
+    checkIn: "2026-12-26",
+    checkOut: "2027-01-02",
+    nights: 7,
+    pricePerNightUsd: 1634.57, // derived from $11,442 total / 7 nights
+    totalPriceUsd: 11442,
+    bedrooms: 4,
+    bathrooms: 4.5,
+    maxGuests: 10,
+    images: [
+      "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1052406844773217221/original/218416be-9dcf-4599-a02d-9d4e2e88322a.jpeg?im_w=2560",
+    ],
+    distanceToBeach: "10 min drive",
+    nearbyAttractions: [],
+    highlights: ["Private pool", "Ping pong table"],
+    criticalNotes: ["Only 4 bedrooms"],
   },
 ];
