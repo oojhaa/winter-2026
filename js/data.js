@@ -376,6 +376,10 @@ const LISTINGS = [
     distanceToBeach: "4 min drive to Coco Beach",
     nearbyAttractions: [{ name: "Coco Beach", distanceMi: null }],
     highlights: ["Private pool", "2 kayaks", "Putting green", "2 bikes"],
-    criticalNotes: ["Only 4 bedrooms"],
+    criticalNotes: [
+      "Only 4 bedrooms",
+      "Pool heat extra (need to inquire)",
+      { text: "Rents Sat–Sat only", severity: "warn" },
+    ],
   },
 ];
