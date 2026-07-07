@@ -8,6 +8,7 @@ const AIRPORTS = {
   SEA: { name: "Seattle (SEA)", lat: 47.4502, lng: -122.3088 },
   AUS: { name: "Austin (AUS)", lat: 30.1975, lng: -97.6664 },
   YYZ: { name: "Toronto (YYZ)", lat: 43.6777, lng: -79.6248 },
+  SFO: { name: "San Francisco (SFO)", lat: 37.6213, lng: -122.379 },
   HNL: { name: "Honolulu (HNL)", lat: 21.3187, lng: -157.9224 },
   SJU: { name: "San Juan (SJU)", lat: 18.4394, lng: -66.0018 },
   CUR: { name: "Curaçao (CUR)", lat: 12.1889, lng: -68.9598 },
@@ -20,6 +21,7 @@ const ORIGINS = [
   { city: "Seattle", airport: "SEA" },
   { city: "Austin", airport: "AUS" },
   { city: "Toronto", airport: "YYZ" },
+  { city: "San Francisco", airport: "SFO" },
 ];
 
 // Overall window all listings' dates are expected to fall within — used to
@@ -130,7 +132,7 @@ const LISTINGS = [
     ],
     distanceToBeach: "15 min walk to Mambo Beach",
     nearbyAttractions: [{ name: "Mambo Beach", distanceMi: null }],
-    highlights: ["Private pool"],
+    highlights: ["Private pool", "Walk to beach"],
     criticalNotes: [{ text: "Minimum 10 night stay required", severity: "warn" }],
   },
   {
@@ -158,7 +160,7 @@ const LISTINGS = [
     ],
     distanceToBeach: "5 min walk (hilly) or drive",
     nearbyAttractions: [],
-    highlights: ["Private infinity pool", "Ping pong table"],
+    highlights: ["Private infinity pool", "Ping pong table", "Walk to beach"],
     criticalNotes: ["Extra electricity/cleaning fees"],
   },
   {
@@ -218,7 +220,7 @@ const LISTINGS = [
     ],
     distanceToBeach: "500 yards (~5 min walk) to shell beach",
     nearbyAttractions: [{ name: "Shell beach", distanceMi: 0.28 }],
-    highlights: ["Private heated pool"],
+    highlights: ["Private heated pool", "Walk to beach"],
     criticalNotes: ["Water can be a bit cold to swim"],
   },
   {
@@ -248,6 +250,35 @@ const LISTINGS = [
     distanceToBeach: "10 min drive",
     nearbyAttractions: [],
     highlights: ["Private pool", "Ping pong table"],
+    criticalNotes: ["Only 4 bedrooms"],
+  },
+  {
+    id: "marathon-vrbo-3790656",
+    name: "Luna Light ~ Waterfront ~ Pool ~ Dock ~ Views!",
+    source: "VRBO",
+    sourceUrl: "https://www.vrbo.com/3790656",
+    destination: "Florida",
+    country: "United States",
+    flightDestination: "EYW", // Key West airport code — more reliable for Google Flights parsing than the place name
+    location: {
+      address: "Near Signs By Renee, Marathon, FL",
+      lat: 24.729265,
+      lng: -81.013047,
+    },
+    checkIn: "2026-12-26",
+    checkOut: "2027-01-03",
+    nights: 8,
+    pricePerNightUsd: 1570.13, // derived from $12,561 total / 8 nights, all fees included
+    totalPriceUsd: 12561,
+    bedrooms: 4,
+    bathrooms: 4.5,
+    maxGuests: 9, // 8 adults + 1 child, from the search link
+    images: [
+      "https://media.vrbo.com/lodging/102000000/101380000/101372200/101372121/1b1479ff.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    ],
+    distanceToBeach: "2 min drive",
+    nearbyAttractions: [],
+    highlights: ["Private pool (heating extra)"],
     criticalNotes: ["Only 4 bedrooms"],
   },
   {
