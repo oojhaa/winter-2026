@@ -155,6 +155,7 @@ const LISTINGS = [
     nearbyAttractions: [{ name: "Shell beach", distanceMi: 0.28 }],
     highlights: ["Private heated pool", "Walk to beach"],
     criticalNotes: ["Water can be a bit cold to swim"],
+    rejectedBy: ["PMA"],
   },
   {
     id: "marathon-airbnb-1052406844773217221",
@@ -184,6 +185,7 @@ const LISTINGS = [
     nearbyAttractions: [],
     highlights: ["Private pool", "Ping pong table"],
     criticalNotes: ["Only 4 bedrooms"],
+    rejectedBy: ["PMA"],
   },
   {
     id: "marathon-vrbo-3790656",
@@ -244,46 +246,6 @@ const LISTINGS = [
     criticalNotes: [],
   },
   {
-    id: "marathon-vrbo-3195625",
-    name: "Waterfront Oasis",
-    source: "VRBO",
-    sourceUrl: "https://www.vrbo.com/3195625",
-    destination: "Florida",
-    country: "United States",
-    flightDestination: ["MIA", "EYW"], // Miami or Key West — both work for the Keys
-    location: {
-      address: "Marathon, FL (approx — exact address not confirmed)",
-      lat: 24.713, // approx Marathon center, walkable to Subway/cafes — TODO refine once exact address is confirmed
-      lng: -81.097,
-    },
-    checkIn: "2026-12-26",
-    checkOut: "2027-01-02",
-    nights: 7,
-    pricePerNightUsd: 1733.43, // derived from $12,134 total / 7 nights
-    totalPriceUsd: 12134,
-    bedrooms: 4, // plus a loft with pull-out couch
-    bathrooms: 4.5,
-    images: [
-      "https://media.vrbo.com/lodging/91000000/90540000/90536300/90536281/ae52fe9e.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    ],
-    distanceToBeach: "8 min drive to Sombrero Beach",
-    nearbyAttractions: [{ name: "Sombrero Beach", distanceMi: null }],
-    highlights: [
-      "Private heated pool",
-      "Outdoor kitchen",
-      "Ping pong table",
-      "Pool table",
-      "Loft with pull-out couch",
-      "Walk to Subway, short distance to cafes",
-    ],
-    criticalNotes: [
-      "Not walking distance to beach",
-      "Yard mostly taken by furniture and pool",
-      { text: "Rents Sat–Sat only", severity: "warn" },
-      "$250 for pool heat for the week",
-    ],
-  },
-  {
     id: "key-colony-vrbo-4102555",
     name: "Emerald Oasis",
     source: "VRBO",
@@ -308,7 +270,7 @@ const LISTINGS = [
     ],
     distanceToBeach: "4 min drive to Coco Beach",
     nearbyAttractions: [{ name: "Coco Beach", distanceMi: null }],
-    highlights: ["Private pool", "2 kayaks", "Putting green", "2 bikes"],
+    highlights: ["Private pool", "2 kayaks", "Putting green", "2 bikes", "Ping pong table"],
     criticalNotes: [
       "Only 4 bedrooms",
       "Pool heat extra (need to inquire)",
@@ -341,6 +303,7 @@ const LISTINGS = [
     nearbyAttractions: [{ name: "Jan Thiel Beach", distanceMi: null }],
     highlights: ["Pool", "Walk to grocery shop", "Walk to beach"],
     criticalNotes: ["2 separate apartments in 1 house", "Low reviews"],
+    rejectedBy: ["PMA"],
   },
   {
     id: "willemstad-airbnb-1506504318682660704",
@@ -372,5 +335,6 @@ const LISTINGS = [
       "No reviews",
       "Not much of a description",
     ],
+    rejectedBy: ["PMA"],
   },
 ];
