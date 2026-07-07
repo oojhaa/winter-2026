@@ -315,4 +315,62 @@ const LISTINGS = [
       { text: "Rents Sat–Sat only", severity: "warn" },
     ],
   },
+  {
+    id: "spanish-water-airbnb-1340082871774601533",
+    name: "Spanish Water Marina",
+    source: "Airbnb",
+    sourceUrl: "https://www.airbnb.com/rooms/1340082871774601533",
+    destination: "Curaçao",
+    country: "Curaçao",
+    location: {
+      address: "407 Caracasbaaiweg, Willemstad, Curaçao",
+      lat: 12.082, // approx — interpolated between Caracasbaaiweg 280 and 447 geocodes, TODO refine
+      lng: -68.866,
+    },
+    checkIn: "2026-12-26",
+    checkOut: "2027-01-02",
+    nights: 7,
+    pricePerNightUsd: 1774.43, // derived from $12,421 total / 7 nights
+    totalPriceUsd: 12421,
+    bedrooms: 6,
+    bathrooms: 6,
+    images: [
+      "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1340082871774601533/original/41a4eddb-c2e6-4feb-86b6-133a8e21f47e.jpeg?im_w=2560",
+    ],
+    distanceToBeach: "Walking distance to Jan Thiel Beach",
+    nearbyAttractions: [{ name: "Jan Thiel Beach", distanceMi: null }],
+    highlights: ["Pool", "Walk to grocery shop", "Walk to beach"],
+    criticalNotes: ["2 separate apartments in 1 house", "Low reviews"],
+  },
+  {
+    id: "willemstad-airbnb-1506504318682660704",
+    name: "Tula Sanctuary",
+    source: "Airbnb",
+    sourceUrl: "https://www.airbnb.com/rooms/1506504318682660704",
+    destination: "Curaçao",
+    country: "Curaçao",
+    location: {
+      address: "429Q+VFQ, Helmin Magno Wiels Boulevard, Willemstad, Curaçao",
+      lat: 12.1197, // decoded from the plus code 429Q+VFQ
+      lng: -68.9613,
+    },
+    checkIn: "2026-12-26",
+    checkOut: "2027-01-02",
+    nights: 7,
+    pricePerNightUsd: 705.14, // derived from $4,936 total / 7 nights
+    totalPriceUsd: 4936,
+    bedrooms: 4,
+    bathrooms: 4.5,
+    images: [
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-1506504318682660704/original/9eb69464-ae8d-48e7-913b-bb1e113f67bc.jpeg?im_w=2560",
+    ],
+    distanceToBeach: "Unknown — not enough info in listing",
+    nearbyAttractions: [],
+    highlights: ["Pool"],
+    criticalNotes: [
+      "Not enough beds for Arya",
+      "No reviews",
+      "Not much of a description",
+    ],
+  },
 ];
