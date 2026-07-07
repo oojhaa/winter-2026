@@ -310,4 +310,72 @@ const LISTINGS = [
     highlights: ["Private pool", "Paddleboards, kayak & bikes", "Walk to beach"],
     criticalNotes: [],
   },
+  {
+    id: "marathon-vrbo-3195625",
+    name: "Waterfront Oasis",
+    source: "VRBO",
+    sourceUrl: "https://www.vrbo.com/3195625",
+    destination: "Florida",
+    country: "United States",
+    flightDestination: ["MIA", "EYW"], // Miami or Key West — both work for the Keys
+    location: {
+      address: "Marathon, FL (approx — exact address not confirmed)",
+      lat: 24.713, // approx Marathon center, walkable to Subway/cafes — TODO refine once exact address is confirmed
+      lng: -81.097,
+    },
+    checkIn: "2026-12-26",
+    checkOut: "2027-01-02",
+    nights: 7,
+    pricePerNightUsd: 1733.43, // derived from $12,134 total / 7 nights
+    totalPriceUsd: 12134,
+    bedrooms: 4, // plus a loft with pull-out couch
+    bathrooms: 4.5,
+    images: [
+      "https://media.vrbo.com/lodging/91000000/90540000/90536300/90536281/ae52fe9e.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    ],
+    distanceToBeach: "8 min drive to Sombrero Beach",
+    nearbyAttractions: [{ name: "Sombrero Beach", distanceMi: null }],
+    highlights: [
+      "Private heated pool",
+      "Outdoor kitchen",
+      "Ping pong table",
+      "Pool table",
+      "Loft with pull-out couch",
+      "Walk to Subway, short distance to cafes",
+    ],
+    criticalNotes: [
+      "Not walking distance to beach",
+      "Yard mostly taken by furniture and pool",
+      { text: "Rents Sat–Sat only", severity: "warn" },
+      "$250 for pool heat for the week",
+    ],
+  },
+  {
+    id: "key-colony-vrbo-4102555",
+    name: "Emerald Oasis",
+    source: "VRBO",
+    sourceUrl: "https://www.vrbo.com/4102555",
+    destination: "Florida",
+    country: "United States",
+    flightDestination: ["MIA", "EYW"], // Miami or Key West — both work for the Keys
+    location: {
+      address: "Key Colony Beach, FL (approx — exact address not confirmed)",
+      lat: 24.720974, // approx, from the VRBO search area for Key Colony Beach — TODO refine once exact address is confirmed
+      lng: -81.018684,
+    },
+    checkIn: "2026-12-26",
+    checkOut: "2027-01-02",
+    nights: 7,
+    pricePerNightUsd: 2038.43, // derived from $14,269 total / 7 nights
+    totalPriceUsd: 14269,
+    bedrooms: 4,
+    bathrooms: 4.5,
+    images: [
+      "https://media.vrbo.com/lodging/107000000/107000000/106991300/106991231/69032f68.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    ],
+    distanceToBeach: "4 min drive to Coco Beach",
+    nearbyAttractions: [{ name: "Coco Beach", distanceMi: null }],
+    highlights: ["Private pool", "2 kayaks", "Putting green", "2 bikes"],
+    criticalNotes: ["Only 4 bedrooms"],
+  },
 ];
